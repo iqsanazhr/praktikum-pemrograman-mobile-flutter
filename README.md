@@ -7,7 +7,7 @@
 ---
 
 ## 📝 Tugas Pertemuan 1
-**Tanggal**: Selasa, 1 September 2026
+**Tanggal**: Selasa, 20 Oktober 2026
 
 ![Tugas Pertemuan 1](docs/tugas-1.png)
 
@@ -17,7 +17,7 @@ Pada pertemuan pertama, praktikum memberikan pemahaman dasar mengenai konsep pen
 ---
 
 ## 📝 Tugas Pertemuan 2
-**Tanggal**: Selasa, 8 September 2026
+**Tanggal**: Selasa, 27 Oktober 2026
 
 ![Tugas Pertemuan 2](docs/tugas-2.png)
 
@@ -27,7 +27,7 @@ Pertemuan kedua menekankan pada implementasi fitur interaktif dalam aplikasi mob
 ---
 
 ## 📝 Tugas Pertemuan 3
-**Tanggal**: Selasa, 15 September 2026
+**Tanggal**: Selasa, 3 November 2026
 
 ![tugas-3.png](docs/tugas-3.png)
 
