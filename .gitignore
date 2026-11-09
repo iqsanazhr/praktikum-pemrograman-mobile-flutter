@@ -41,3 +41,18 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# --- Auto Added by EldiruKu Submission Packager ---
+.env
+.env.local
+.env.*.local
+node_modules/
+vendor/
+__pycache__/
+.pytest_cache/
+build/
+*.apk
+*.ipa
+Thumbs.db
+storage/logs/
+bootstrap/cache/

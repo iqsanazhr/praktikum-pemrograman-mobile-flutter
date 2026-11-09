@@ -1,16 +1,60 @@
-# router_flutter
+# Laporan Praktikum Pemrograman Mobile
+**Nama** : Iqsan Azhar Nuryadi  
+**NIM** : H1D024009  
+**Shift** : Awal A / Akhir C  
+**Praktikum** : Pemrograman Mobile  
 
-A new Flutter project.
+---
 
-## Getting Started
+## 📝 Tugas Pertemuan 1
+**Tanggal**: Selasa, 1 September 2026
 
-This project is a starting point for a Flutter application.
+![Tugas Pertemuan 1](docs/tugas-1.png)
 
-A few resources to get you started if this is your first Flutter project:
+### Kesimpulan Praktikum:
+Pada pertemuan pertama, praktikum memberikan pemahaman dasar mengenai konsep pengembangan aplikasi mobile. Mahasiswa dapat mengenali struktur proyek, alur kerja, serta pentingnya konsistensi dalam penulisan kode agar aplikasi mudah dikembangkan dan dipelihara.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📝 Tugas Pertemuan 2
+**Tanggal**: Selasa, 8 September 2026
+
+![Tugas Pertemuan 2](docs/tugas-2.png)
+
+### Kesimpulan Praktikum:
+Pertemuan kedua menekankan pada implementasi fitur interaktif dalam aplikasi mobile. Mahasiswa belajar bagaimana menghubungkan antarmuka dengan logika program sehingga aplikasi dapat merespons input pengguna secara dinamis dan memberikan pengalaman yang lebih baik.
+
+---
+
+## 📝 Tugas Pertemuan 3
+**Tanggal**: Selasa, 15 September 2026
+
+![tugas-3.png](docs/tugas-3.png)
+
+### Kesimpulan Praktikum:
+Pertemuan ketiga membuka wawasan tentang pengembangan aplikasi mobile yang lebih kompleks. Mahasiswa belajar bagaimana mengintegrasikan berbagai komponen dan fitur untuk menciptakan aplikasi yang lebih lengkap dan bermanfaat.
+
+---
+
+## 🚀 Panduan Menjalankan Proyek
+
+1. **Pastikan Flutter SDK terpasang**:
+   ```bash
+   flutter --version
+   ```
+
+2. **Pasang dependensi**:
+   ```bash
+   flutter pub get
+   ```
+
+3. **Jalankan aplikasi**:
+   ```bash
+   flutter run -d chrome
+   # Atau pada emulator / device Android:
+   # flutter run
+   ```
+
+4. **Kredensial Default Login**:
+   - **Username**: `admin`
+   - **Password**: `admin`
