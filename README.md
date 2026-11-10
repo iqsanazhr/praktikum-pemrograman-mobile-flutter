@@ -7,42 +7,46 @@
 ---
 
 ## 📝 Tugas Pertemuan 1
-**Tanggal**: Selasa, 20 Oktober 2026
+**Tanggal**: Selasa, 20 Oktober 2026  
+**Topik**: Pengenalan Dasar Flutter & Pembuatan Aplikasi Pertama (Hello World)
 
 ![Tugas Pertemuan 1](docs/tugas-1.png)
 
 ### Kesimpulan Praktikum:
-Pada pertemuan pertama, praktikum memberikan pemahaman dasar mengenai konsep pengembangan aplikasi mobile. Mahasiswa dapat mengenali struktur proyek, alur kerja, serta pentingnya konsistensi dalam penulisan kode agar aplikasi mudah dikembangkan dan dipelihara.
+Pada pertemuan pertama, praktikum memberikan pemahaman mendasar mengenai instalasi dan arsitektur framework Flutter berbasis bahasa pemrograman Dart. Mahasiswa memahami struktur berkas proyek Flutter, fungsi titik masuk `main()` dan `runApp()`, konsep *declarative UI* dengan hierarki *widget tree* (`MaterialApp`, `Scaffold`, `AppBar`, dan `Text`), serta keunggulan fitur *Hot Reload* dan *Hot Restart* dalam mempercepat proses *debugging* antarmuka aplikasi mobile.
 
 ---
 
 ## 📝 Tugas Pertemuan 2
-**Tanggal**: Selasa, 27 Oktober 2026
+**Tanggal**: Selasa, 27 Oktober 2026  
+**Topik**: Tata Letak Antarmuka (*Layouting Widget*) & Formulir Produk
 
 ![Tugas Pertemuan 2](docs/tugas-2.png)
 
 ### Kesimpulan Praktikum:
-Pertemuan kedua menekankan pada implementasi fitur interaktif dalam aplikasi mobile. Mahasiswa belajar bagaimana menghubungkan antarmuka dengan logika program sehingga aplikasi dapat merespons input pengguna secara dinamis dan memberikan pengalaman yang lebih baik.
+Pada pertemuan kedua, praktikum berfokus pada teknik tata letak (*layouting*) dan pengelolaan formulir pada Flutter. Mahasiswa menguasai penggunaan widget struktural linier vertikal (`Column`) dan horizontal (`Row`), penerapan spasi antar elemen, serta perancangan antarmuka formulir interaktif dengan `TextField` dan `TextEditingController`. Selain itu, mahasiswa berhasil mempraktikkan konsep navigasi dasar dan perpindahan data (*passing data*) antar-layar menggunakan `Navigator.push` dan `MaterialPageRoute` menuju halaman rincian produk (`ProdukDetail`).
 
 ---
 
 ## 📝 Tugas Pertemuan 3
-**Tanggal**: Selasa, 3 November 2026
+**Tanggal**: Selasa, 3 November 2026  
+**Topik**: *Routes*, Navigasi Samping (*Drawer*), dan Manajemen Sesi Lokal (*SharedPreferences*)
 
-![tugas-3.png](docs/tugas-3.png)
+![Tugas Pertemuan 3](docs/tugas-3.png)
 
 ### Kesimpulan Praktikum:
-Pertemuan ketiga membuka wawasan tentang pengembangan aplikasi mobile yang lebih kompleks. Mahasiswa belajar bagaimana mengintegrasikan berbagai komponen dan fitur untuk menciptakan aplikasi yang lebih lengkap dan bermanfaat.
+Pada pertemuan ketiga, praktikum mendalami konsep navigasi multi-halaman berjenjang, pembuatan menu navigasi samping (*Sidemenu Drawer*), dan manajemen persistensi sesi pengguna secara lokal (*local storage*). Mahasiswa berhasil mengimplementasikan sistem autentikasi login dengan validasi input, penyajian umpan balik melalui `AlertDialog`, serta penyimpanan data sesi pengguna secara persisten menggunakan library `shared_preferences`, sehingga status login pengguna tetap tersimpan dan dapat dimuat kembali secara reaktif pada *HomePage*.
 
 ---
 
 ## 📝 Tugas Pertemuan 4
-**Tanggal**: Selasa, 10 November 2026
+**Tanggal**: Selasa, 10 November 2026  
+**Topik**: Operasi CRUD dengan RESTful API CodeIgniter 4 & Integrasi Frontend Flutter (TokoKita)
 
 ![Tugas Pertemuan 4](docs/tugas-4.png)
 
 ### Kesimpulan Praktikum:
-Pada pertemuan keempat, praktikum mempelajari arsitektur RESTful API menggunakan framework CodeIgniter 4 (PHP) yang terhubung dengan basis data MySQL `toko_api` serta pembuatan aplikasi mobile Flutter TokoKita. Mahasiswa mempraktikkan perancangan basis data, implementasi endpoint autentikasi (Registrasi dan Login dengan enkripsi kata sandi dan token), serta operasi CRUD penuh (Create, Read/List, Detail, Update, Delete) pada data produk yang diuji secara menyeluruh melalui REST Client dan antarmuka mobile.
+Pada pertemuan keempat, praktikum menerapkan integrasi *full-stack* antara *backend* RESTful API berbasis framework CodeIgniter 4 (PHP & MySQL pada web server lokal Laragon) dengan *frontend mobile* Flutter TokoKita. Mahasiswa mempraktikkan perancangan skema basis data relasional (`member`, `member_token`, `produk`), implementasi autentikasi aman dengan enkripsi `password_hash` (BCRYPT) dan penerbitan token sesi, serta penyediaan operasi CRUD lengkap (*Create, Read/List, Detail, Update, Delete*). Pada sisi Flutter, antarmuka dirancang secara modular mencakup registrasi akun, login, katalog kartu produk, rincian produk terpilih, serta formulir tambah dan ubah produk dengan penanganan dialog konfirmasi aksi.
 
 ---
 
