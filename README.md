@@ -36,25 +36,38 @@ Pertemuan ketiga membuka wawasan tentang pengembangan aplikasi mobile yang lebih
 
 ---
 
+## 📝 Tugas Pertemuan 4
+**Tanggal**: Selasa, 10 November 2026
+
+![Tugas Pertemuan 4](docs/tugas-4.png)
+
+### Kesimpulan Praktikum:
+Pada pertemuan keempat, praktikum mempelajari arsitektur RESTful API menggunakan framework CodeIgniter 4 (PHP) yang terhubung dengan basis data MySQL `toko_api` serta pembuatan aplikasi mobile Flutter TokoKita. Mahasiswa mempraktikkan perancangan basis data, implementasi endpoint autentikasi (Registrasi dan Login dengan enkripsi kata sandi dan token), serta operasi CRUD penuh (Create, Read/List, Detail, Update, Delete) pada data produk yang diuji secara menyeluruh melalui REST Client dan antarmuka mobile.
+
+---
+
 ## 🚀 Panduan Menjalankan Proyek
 
-1. **Pastikan Flutter SDK terpasang**:
-   ```bash
-   flutter --version
-   ```
+### 1. Menjalankan Backend API CodeIgniter 4 (Laragon)
+- Pastikan Apache dan MySQL di Laragon telah aktif.
+- Direktori backend: `C:\laragon\www\toko-api`
+- Database: `toko_api` (MySQL port 3306)
+- Base URL API: `http://localhost/toko-api/public/`
+- Daftar Endpoint:
+  - `POST /registrasi` : Registrasi akun pengguna baru
+  - `POST /login` : Autentikasi dan penerbitan token sesi
+  - `GET /produk` : Menampilkan seluruh daftar produk
+  - `POST /produk` : Menambahkan data produk baru
+  - `GET /produk/{id}` : Menampilkan rincian data produk
+  - `PUT /produk/{id}` : Memperbarui data produk
+  - `DELETE /produk/{id}` : Menghapus data produk
 
-2. **Pasang dependensi**:
-   ```bash
-   flutter pub get
-   ```
-
-3. **Jalankan aplikasi**:
-   ```bash
-   flutter run -d chrome
-   # Atau pada emulator / device Android:
-   # flutter run
-   ```
-
-4. **Kredensial Default Login**:
-   - **Username**: `admin`
-   - **Password**: `admin`
+### 2. Menjalankan Aplikasi Mobile Flutter (TokoKita)
+- Pasang dependensi:
+  ```bash
+  flutter pub get
+  ```
+- Jalankan pada web atau emulator:
+  ```bash
+  flutter run -d chrome
+  ```

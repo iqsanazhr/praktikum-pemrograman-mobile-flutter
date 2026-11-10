@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:router_flutter/main.dart';
+import 'package:router_flutter/login_page.dart';
 import 'package:router_flutter/home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -10,7 +10,7 @@ void main() {
   });
 
   testWidgets('Modul 3: Login Success Flow', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const MaterialApp(home: LoginPage()));
 
     // Enter admin credentials
     await tester.enterText(
@@ -35,7 +35,7 @@ void main() {
   });
 
   testWidgets('Modul 3: Login Failed Flow', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const MaterialApp(home: LoginPage()));
 
     // Enter wrong credentials
     await tester.enterText(

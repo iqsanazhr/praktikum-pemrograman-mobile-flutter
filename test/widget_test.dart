@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:router_flutter/main.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
-  testWidgets('LoginPage smoke test and validation', (WidgetTester tester) async {
-    SharedPreferences.setMockInitialValues({});
+  testWidgets('MyApp smoke test displays ProdukPage', (WidgetTester tester) async {
     await tester.pumpWidget(const MyApp());
 
-    // Verify AppBar title 'Login'
-    expect(find.text('Login'), findsWidgets);
+    // Verify AppBar title 'List Produk'
+    expect(find.text('List Produk'), findsOneWidget);
 
-    // Verify input fields
-    expect(find.widgetWithText(TextField, 'Masukkan Username'), findsOneWidget);
-    expect(find.widgetWithText(TextField, 'Masukkan Password'), findsOneWidget);
+    // Verify product items exist
+    expect(find.text('Kamera'), findsOneWidget);
+    expect(find.text('Kulkas'), findsOneWidget);
+    expect(find.text('Mesin Cuci'), findsOneWidget);
 
-    // Verify Login button
-    expect(find.widgetWithText(ElevatedButton, 'Login'), findsOneWidget);
+    // Verify add icon
+    expect(find.byIcon(Icons.add), findsOneWidget);
   });
 }

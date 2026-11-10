@@ -33,34 +33,30 @@ void main() {
 
   testWidgets('ProdukPage renders product cards', (WidgetTester tester) async {
     await tester.pumpWidget(const MaterialApp(home: ProdukPage()));
-    expect(find.text('List Data Produk'), findsOneWidget);
+    expect(find.text('List Produk'), findsOneWidget);
     expect(find.text('Kulkas'), findsOneWidget);
-    expect(find.text('Playstation'), findsOneWidget);
-    expect(find.text('Radio'), findsOneWidget);
+    expect(find.text('Kamera'), findsOneWidget);
+    expect(find.text('Mesin Cuci'), findsOneWidget);
   });
 
-  testWidgets('ProdukForm input and navigation to ProdukDetail', (WidgetTester tester) async {
+  testWidgets('ProdukForm input and validation', (WidgetTester tester) async {
     await tester.pumpWidget(const MaterialApp(home: ProdukForm()));
 
     // Verify fields
-    expect(find.text('Form Produk'), findsOneWidget);
-    expect(find.widgetWithText(TextField, 'Kode Produk'), findsOneWidget);
-    expect(find.widgetWithText(TextField, 'Nama Produk'), findsOneWidget);
-    expect(find.widgetWithText(TextField, 'Harga'), findsOneWidget);
+    expect(find.text('TAMBAH PRODUK'), findsOneWidget);
+    expect(find.widgetWithText(TextFormField, 'Kode Produk'), findsOneWidget);
+    expect(find.widgetWithText(TextFormField, 'Nama Produk'), findsOneWidget);
+    expect(find.widgetWithText(TextFormField, 'Harga'), findsOneWidget);
 
     // Enter text
-    await tester.enterText(find.widgetWithText(TextField, 'Kode Produk'), 'A001');
-    await tester.enterText(find.widgetWithText(TextField, 'Nama Produk'), 'Laptop ASUS');
-    await tester.enterText(find.widgetWithText(TextField, 'Harga'), '7500000');
+    await tester.enterText(find.widgetWithText(TextFormField, 'Kode Produk'), 'A001');
+    await tester.enterText(find.widgetWithText(TextFormField, 'Nama Produk'), 'Laptop ASUS');
+    await tester.enterText(find.widgetWithText(TextFormField, 'Harga'), '7500000');
 
-    // Tap Simpan
-    await tester.tap(find.widgetWithText(ElevatedButton, 'Simpan'));
+    // Tap SIMPAN
+    await tester.tap(find.widgetWithText(OutlinedButton, 'SIMPAN'));
     await tester.pumpAndSettle();
 
-    // Verify navigation to ProdukDetail
-    expect(find.text('Detail Produk'), findsOneWidget);
-    expect(find.text('Kode Produk : A001'), findsOneWidget);
-    expect(find.text('Nama Produk : Laptop ASUS'), findsOneWidget);
-    expect(find.text('Harga Produk : 7500000'), findsOneWidget);
+    expect(find.text('Berhasil SIMPAN Data Produk'), findsOneWidget);
   });
 }

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'produk_detail.dart';
+import '../model/produk.dart';
 
 class ProdukForm extends StatefulWidget {
-  const ProdukForm({super.key});
+  final Produk? produk;
+
+  const ProdukForm({Key? key, this.produk}) : super(key: key);
 
   @override
   // ignore: library_private_types_in_public_api
@@ -10,77 +12,131 @@ class ProdukForm extends StatefulWidget {
 }
 
 class _ProdukFormState extends State<ProdukForm> {
-  final _kodeProdukController = TextEditingController();
-  final _namaProdukController = TextEditingController();
-  final _hargaProdukController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+  // ignore: unused_field
+  final bool _isLoading = false;
+  String judul = "TAMBAH PRODUK";
+  String tombolSubmit = "SIMPAN";
+
+  final _kodeProdukTextboxController = TextEditingController();
+  final _namaProdukTextboxController = TextEditingController();
+  final _hargaProdukTextboxController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    isUpdate();
+  }
+
+  @override
+  void didUpdateWidget(covariant ProdukForm oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    isUpdate();
+  }
 
   @override
   void dispose() {
-    _kodeProdukController.dispose();
-    _namaProdukController.dispose();
-    _hargaProdukController.dispose();
+    _kodeProdukTextboxController.dispose();
+    _namaProdukTextboxController.dispose();
+    _hargaProdukTextboxController.dispose();
     super.dispose();
+  }
+
+  void isUpdate() {
+    if (widget.produk != null) {
+      judul = "UBAH PRODUK";
+      tombolSubmit = "UBAH";
+      _kodeProdukTextboxController.text = widget.produk!.kodeProduk ?? '';
+      _namaProdukTextboxController.text = widget.produk!.namaProduk ?? '';
+      _hargaProdukTextboxController.text =
+          widget.produk!.hargaProduk?.toString() ?? '';
+    } else {
+      judul = "TAMBAH PRODUK";
+      tombolSubmit = "SIMPAN";
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Form Produk'),
-      ),
-      body: Container(
-        margin: const EdgeInsets.all(10),
-        child: Column(
-          children: [
-            _textboxKodeProduk(),
-            _textboxNamaProduk(),
-            _textboxHarga(),
-            _tombolSimpan(),
-          ],
+      appBar: AppBar(title: Text(judul)),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                _kodeProdukTextField(),
+                _namaProdukTextField(),
+                _hargaProdukTextField(),
+                const SizedBox(height: 20),
+                _buttonSubmit()
+              ],
+            ),
+          ),
         ),
       ),
     );
   }
 
-  Widget _textboxKodeProduk() {
-    return TextField(
+  // Membuat Textbox Kode Produk
+  Widget _kodeProdukTextField() {
+    return TextFormField(
       decoration: const InputDecoration(labelText: "Kode Produk"),
-      controller: _kodeProdukController,
-    );
-  }
-
-  Widget _textboxNamaProduk() {
-    return TextField(
-      decoration: const InputDecoration(labelText: "Nama Produk"),
-      controller: _namaProdukController,
-    );
-  }
-
-  Widget _textboxHarga() {
-    return TextField(
-      decoration: const InputDecoration(labelText: "Harga"),
-      controller: _hargaProdukController,
-      keyboardType: TextInputType.number,
-    );
-  }
-
-  Widget _tombolSimpan() {
-    return ElevatedButton(
-      onPressed: () {
-        String kodeProduk = _kodeProdukController.text;
-        String namaProduk = _namaProdukController.text;
-        int harga = int.tryParse(_hargaProdukController.text) ?? 0;
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => ProdukDetail(
-              kodeProduk: kodeProduk,
-              namaProduk: namaProduk,
-              harga: harga,
-            ),
-          ),
-        );
+      keyboardType: TextInputType.text,
+      controller: _kodeProdukTextboxController,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return "Kode Produk harus diisi";
+        }
+        return null;
       },
-      child: const Text('Simpan'),
+    );
+  }
+
+  // Membuat Textbox Nama Produk
+  Widget _namaProdukTextField() {
+    return TextFormField(
+      decoration: const InputDecoration(labelText: "Nama Produk"),
+      keyboardType: TextInputType.text,
+      controller: _namaProdukTextboxController,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return "Nama Produk harus diisi";
+        }
+        return null;
+      },
+    );
+  }
+
+  // Membuat Textbox Harga Produk
+  Widget _hargaProdukTextField() {
+    return TextFormField(
+      decoration: const InputDecoration(labelText: "Harga"),
+      keyboardType: TextInputType.number,
+      controller: _hargaProdukTextboxController,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return "Harga harus diisi";
+        }
+        return null;
+      },
+    );
+  }
+
+  // Membuat Tombol Simpan/Ubah
+  Widget _buttonSubmit() {
+    return OutlinedButton(
+      child: Text(tombolSubmit),
+      onPressed: () {
+        var validate = _formKey.currentState!.validate();
+        if (validate) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Berhasil $tombolSubmit Data Produk')),
+          );
+        }
+      },
     );
   }
 }
